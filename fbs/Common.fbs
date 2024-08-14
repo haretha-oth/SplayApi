@@ -51,6 +51,7 @@ enum SETTING:uint8 {
   IEEE1588_ACTIVE = 24,
   LOCK_STATUS = 25,
   DB_VERSION = 26,
+  IOE = 27
 }
 
 table GetUploadStatus

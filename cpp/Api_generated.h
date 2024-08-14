@@ -22,7 +22,7 @@ struct HeaderBuilder;
 
 struct Message;
 struct MessageBuilder;
-
+//CHANGE 1
 enum Body {
   Body_NONE = 0,
   Body_StatusRes = 1,

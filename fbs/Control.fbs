@@ -15,7 +15,8 @@ enum TRIGGER_TYPE:uint8 {
   SACN,
   POWERUP,
   UDP,
-  BUTTON
+  BUTTON,
+  IOE
  }
 
 enum EVENT_TYPE:uint8 {
@@ -26,7 +27,8 @@ enum EVENT_TYPE:uint8 {
   DMX,
   SACN,
   OSC,
-  UDP,
+  UDP,,
+  IOE
 }
 
 table TriggerTable {

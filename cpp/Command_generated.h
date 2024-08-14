@@ -88,14 +88,14 @@ enum COMMAND {
   COMMAND_APPLY_RESTORE = 103,
   COMMAND_DISCOVER_DEVICES = 110,
   COMMAND_PLAYLIST_RESYNC = 111,
-  COMMAND_DISCOVER_IOE_DEVICES = 112,
   COMMAND_SHUTDOWN = 222,
   COMMAND_REFRESH_SETTING = 254,
+  COMMAND_DISCOVER_IOE_DEVICES = 255,
   COMMAND_MIN = COMMAND_PLAY,
-  COMMAND_MAX = COMMAND_REFRESH_SETTING
+  COMMAND_MAX = COMMAND_DISCOVER_IOE_DEVICES
 };
 
-inline const COMMAND (&EnumValuesCOMMAND())[81] {
+inline const COMMAND (&EnumValuesCOMMAND())[82] {
   static const COMMAND values[] = {
     COMMAND_PLAY,
     COMMAND_PAUSE,
@@ -177,13 +177,14 @@ inline const COMMAND (&EnumValuesCOMMAND())[81] {
     COMMAND_DISCOVER_DEVICES,
     COMMAND_PLAYLIST_RESYNC,
     COMMAND_SHUTDOWN,
-    COMMAND_REFRESH_SETTING
+    COMMAND_REFRESH_SETTING,
+    COMMAND_DISCOVER_IOE_DEVICES
   };
   return values;
 }
 
 inline const char * const *EnumNamesCOMMAND() {
-  static const char * const names[256] = {
+  static const char * const names[257] = {
     "PLAY",
     "PAUSE",
     "STOP",
@@ -439,13 +440,14 @@ inline const char * const *EnumNamesCOMMAND() {
     "",
     "",
     "REFRESH_SETTING",
+    "DISCOVER_IOE_DEVICES",
     nullptr
   };
   return names;
 }
 
 inline const char *EnumNameCOMMAND(COMMAND e) {
-  if (flatbuffers::IsOutRange(e, COMMAND_PLAY, COMMAND_REFRESH_SETTING)) return "";
+  if (flatbuffers::IsOutRange(e, COMMAND_PLAY, COMMAND_DISCOVER_IOE_DEVICES)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesCOMMAND()[index];
 }

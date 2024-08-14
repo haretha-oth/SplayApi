@@ -35,7 +35,8 @@ SplayApi.TRIGGER_TYPE = {
   SACN: 6,
   POWERUP: 7,
   UDP: 8,
-  BUTTON: 9
+  BUTTON: 9,
+  IOE: 10
 };
 
 /**
@@ -51,7 +52,8 @@ SplayApi.TRIGGER_TYPEName = {
   '6': 'SACN',
   '7': 'POWERUP',
   '8': 'UDP',
-  '9': 'BUTTON'
+  '9': 'BUTTON',
+  '10': 'IOE'
 };
 
 /**
@@ -65,7 +67,8 @@ SplayApi.EVENT_TYPE = {
   DMX: 4,
   SACN: 5,
   OSC: 6,
-  UDP: 7
+  UDP: 7,
+  IOE: 8,
 };
 
 /**
@@ -79,7 +82,8 @@ SplayApi.EVENT_TYPEName = {
   '4': 'DMX',
   '5': 'SACN',
   '6': 'OSC',
-  '7': 'UDP'
+  '7': 'UDP',
+  '8': 'IOE'
 };
 
 /**

@@ -250,11 +250,12 @@ enum SETTING {
   SETTING_IEEE1588_ACTIVE = 24,
   SETTING_LOCK_STATUS = 25,
   SETTING_DB_VERSION = 26,
+  SETTING_IOE = 27,
   SETTING_MIN = SETTING_IS_SPARE,
-  SETTING_MAX = SETTING_DB_VERSION
+  SETTING_MAX = SETTING_IOE
 };
 
-inline const SETTING (&EnumValuesSETTING())[27] {
+inline const SETTING (&EnumValuesSETTING())[28] {
   static const SETTING values[] = {
     SETTING_IS_SPARE,
     SETTING_SYSTEM_NAME,
@@ -282,13 +283,14 @@ inline const SETTING (&EnumValuesSETTING())[27] {
     SETTING_IEEE1588_CONFIG,
     SETTING_IEEE1588_ACTIVE,
     SETTING_LOCK_STATUS,
-    SETTING_DB_VERSION
+    SETTING_DB_VERSION,
+    SETTING_IOE
   };
   return values;
 }
 
 inline const char * const *EnumNamesSETTING() {
-  static const char * const names[28] = {
+  static const char * const names[29] = {
     "IS_SPARE",
     "SYSTEM_NAME",
     "PLAYBACK_CONFIG",
@@ -316,13 +318,14 @@ inline const char * const *EnumNamesSETTING() {
     "IEEE1588_ACTIVE",
     "LOCK_STATUS",
     "DB_VERSION",
+    "IOE",
     nullptr
   };
   return names;
 }
 
 inline const char *EnumNameSETTING(SETTING e) {
-  if (flatbuffers::IsOutRange(e, SETTING_IS_SPARE, SETTING_DB_VERSION)) return "";
+  if (flatbuffers::IsOutRange(e, SETTING_IS_SPARE, SETTING_IOE)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesSETTING()[index];
 }

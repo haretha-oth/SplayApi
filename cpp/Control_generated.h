@@ -57,10 +57,10 @@ enum TRIGGER_TYPE {
   TRIGGER_TYPE_BUTTON = 9,
   TRIGGER_TYPE_IOE = 10,
   TRIGGER_TYPE_MIN = TRIGGER_TYPE_NONE,
-  TRIGGER_TYPE_MAX = TRIGGER_TYPE_BUTTON
+  TRIGGER_TYPE_MAX = TRIGGER_TYPE_IOE
 };
 
-inline const TRIGGER_TYPE (&EnumValuesTRIGGER_TYPE())[10] {
+inline const TRIGGER_TYPE (&EnumValuesTRIGGER_TYPE())[11] {
   static const TRIGGER_TYPE values[] = {
     TRIGGER_TYPE_NONE,
     TRIGGER_TYPE_OSC,
@@ -71,13 +71,14 @@ inline const TRIGGER_TYPE (&EnumValuesTRIGGER_TYPE())[10] {
     TRIGGER_TYPE_SACN,
     TRIGGER_TYPE_POWERUP,
     TRIGGER_TYPE_UDP,
-    TRIGGER_TYPE_BUTTON
+    TRIGGER_TYPE_BUTTON,
+    TRIGGER_TYPE_IOE
   };
   return values;
 }
 
 inline const char * const *EnumNamesTRIGGER_TYPE() {
-  static const char * const names[11] = {
+  static const char * const names[12] = {
     "NONE",
     "OSC",
     "RS232",
@@ -88,13 +89,14 @@ inline const char * const *EnumNamesTRIGGER_TYPE() {
     "POWERUP",
     "UDP",
     "BUTTON",
+    "IOE",
     nullptr
   };
   return names;
 }
 
 inline const char *EnumNameTRIGGER_TYPE(TRIGGER_TYPE e) {
-  if (flatbuffers::IsOutRange(e, TRIGGER_TYPE_NONE, TRIGGER_TYPE_BUTTON)) return "";
+  if (flatbuffers::IsOutRange(e, TRIGGER_TYPE_NONE, TRIGGER_TYPE_IOE)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesTRIGGER_TYPE()[index];
 }
@@ -110,10 +112,11 @@ enum EVENT_TYPE {
   EVENT_TYPE_UDP = 7,
   EVENT_TYPE_IOE = 8,
   EVENT_TYPE_MIN = EVENT_TYPE_NONE,
-  EVENT_TYPE_MAX = EVENT_TYPE_UDP
+  EVENT_TYPE_MAX = EVENT_TYPE_IOE,
+
 };
 
-inline const EVENT_TYPE (&EnumValuesEVENT_TYPE())[8] {
+inline const EVENT_TYPE (&EnumValuesEVENT_TYPE())[9] {
   static const EVENT_TYPE values[] = {
     EVENT_TYPE_NONE,
     EVENT_TYPE_RS232,
@@ -122,13 +125,14 @@ inline const EVENT_TYPE (&EnumValuesEVENT_TYPE())[8] {
     EVENT_TYPE_DMX,
     EVENT_TYPE_SACN,
     EVENT_TYPE_OSC,
-    EVENT_TYPE_UDP
+    EVENT_TYPE_UDP,
+    EVENT_TYPE_IOE
   };
   return values;
 }
 
 inline const char * const *EnumNamesEVENT_TYPE() {
-  static const char * const names[9] = {
+  static const char * const names[10] = {
     "NONE",
     "RS232",
     "IO",
@@ -137,13 +141,14 @@ inline const char * const *EnumNamesEVENT_TYPE() {
     "SACN",
     "OSC",
     "UDP",
+    "IOE",
     nullptr
   };
   return names;
 }
 
 inline const char *EnumNameEVENT_TYPE(EVENT_TYPE e) {
-  if (flatbuffers::IsOutRange(e, EVENT_TYPE_NONE, EVENT_TYPE_UDP)) return "";
+  if (flatbuffers::IsOutRange(e, EVENT_TYPE_NONE, EVENT_TYPE_IOE)) return "";
   const size_t index = static_cast<size_t>(e);
   return EnumNamesEVENT_TYPE()[index];
 }

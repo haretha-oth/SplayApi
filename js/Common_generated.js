@@ -154,7 +154,8 @@ SplayApi.SETTING = {
   IEEE1588_CONFIG: 23,
   IEEE1588_ACTIVE: 24,
   LOCK_STATUS: 25,
-  DB_VERSION: 26
+  DB_VERSION: 26,
+  IOE: 27,
 };
 
 /**
@@ -187,7 +188,8 @@ SplayApi.SETTINGName = {
   '23': 'IEEE1588_CONFIG',
   '24': 'IEEE1588_ACTIVE',
   '25': 'LOCK_STATUS',
-  '26': 'DB_VERSION'
+  '26': 'DB_VERSION',
+  '27': 'IOE'
 };
 
 /**
